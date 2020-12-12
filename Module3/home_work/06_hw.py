@@ -1,5 +1,5 @@
 # Данные о товарах на складе хранятся в словаре
-items = [
+itemss = [
     {
         "name": "Кроссовки",
         "brand": "adidas",
@@ -31,6 +31,30 @@ items = [
         "price": 1700
     },
 ]
+brands=[]
+prices=0
+prices_brend=""
+for i in itemss:
+    brands.append(i["brand"])
+    if i["price"]>prices:
+        prices=i["price"]
+        prices_brend=i["brand"]
+        
+
+
+quantity_brand=0   # Ищем - На складе больше всего товаров брэнда(ов) 
+name_brand=""
+for k in set(brands):
+    if brands.count(k) > quantity_brand:
+        quantity_brand=brands.count(k)
+        name_brand=k
+
+print("Товары на складе представлены брэндами: ",set(brands) )
+print("На складе больше всего товаров брэнда(ов): ",name_brand)
+print("На складе самый дорогой товар брэнда(ов): ", prices_brend)
+
+    
+"""  
 # Найдите:
 print("Товары на складе представлены брэндами: ")
 
